@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #0d1610, #1b2b1e);
+    color: #f1f5f9;
+    overflow-x: hidden;
+}
+
+/* Cabeçalho */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.titulo-animado {
+    font-size: 4.2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #eab308, #84cc16);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+.subtitulo-animado {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin: 15px 0 30px;
+}
+
+.btn-explorar {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #eab308;
+    color: #0d1610;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-explorar:hover {
+    background-color: #facc15;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(234, 179, 8, 0.3);
+}
+
+/* Animação contínua de movimento no título */
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* Seções e Cartões */
+.secao {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.card {
+    background: rgba(20, 33, 24, 0.9);
+    border: 1px solid rgba(234, 179, 8, 0.25);
+    border-left: 6px solid #eab308;
+    border-radius: 14px;
+    padding: 45px;
+    max-width: 720px;
+    width: 100%;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    border-color: #eab308;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(234, 179, 8, 0.15);
+    color: #eab308;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.card h2 {
+    font-size: 2.3rem;
+    margin-bottom: 18px;
+    color: #ffffff;
+}
+
+.card p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #d1d5db;
+}
+
+.card strong {
+    color: #facc15;
+}
+
+/* Animação de movimento lateral controlada pelo JavaScript */
+.revelar {
+    opacity: 0;
+    transform: translateX(-70px);
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Faz a segunda seção entrar pelo lado direito para alternar o movimento */
+.revelar:nth-child(even) {
+    transform: translateX(70px);
+}
+
+.revelar.ativo {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #6b7280;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
